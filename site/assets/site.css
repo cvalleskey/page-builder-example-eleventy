@@ -1,0 +1,158 @@
+* {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    box-sizing: border-box;
+    text-rendering: geometricPrecision;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 10px;
+}
+
+html,
+body {
+    --content-font: "Helvetica Neue", "Helvetica", "Arial";
+    --component-padding: 100px;
+    position: relative;
+    margin: 0;
+    font-family: var(--content-font);
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    background-color: #eeeeee;
+}
+
+body img {
+    max-width: 100%;
+}
+
+.body-wrapper {
+    margin: 50px auto;
+    padding: 50px;
+    max-width: 1080px;
+    min-height: 90vh;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px #ddd;
+    font-size: 1.8em;
+}
+
+.site-heading {
+    text-align: center;
+}
+
+.component-wrapper {
+    padding: 25px 0;
+}
+
+
+/*
+  ////////////////
+ // CMS Styles //
+////////////////
+*/
+
+.cms-add-component-button {
+    display: none;
+    margin-top: 10px;
+    padding: 12px 20px;
+    width: auto;
+    border-radius: 4px;
+    box-shadow: 0px 0px 1px #5e5e5e;
+    border: 2px solid #cfcfcf;
+    background: #ffffff;
+    text-align: center;
+    font-family: 'TT Norms Pro', 'Arial';
+    font-size: 16px;
+    color: #222222;
+    cursor: pointer;
+}
+
+.cms-add-component-button:after {
+    display: none;
+}
+
+.cms-add-component-button:hover {
+    background-color: #eaeaea;
+}
+
+
+.cms-editor-active .cms-add-component-button {
+    display: inline-block;
+}
+
+.cms-editor-active .cms-editor-link {
+    position: relative;
+    outline: unset !important;
+    cursor: pointer;
+}
+
+.cms-editor-active .cms-editor-link:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -2%;
+    right: 0;
+    margin: 0 auto;
+    transform: translateY(-50%);
+    width: 104%;
+    height: 100%;
+    border: 6px solid gold;
+    opacity: 0;
+    border-radius: 8px;
+    box-shadow: inset 0px 0px 4px #ffd90a;
+    pointer-events: none;
+    box-sizing: border-box;
+    transition: opacity 0.15s ease-in;
+}
+        
+.cms-editor-active .cms-editor-link:hover {
+    outline: 0 solid transparent;
+}
+
+.cms-editor-active .cms-editor-link:hover::after {
+    opacity: 1;
+}
+
+.cms-editor-active .cms-editor-link:hover .component {
+    opacity: 0.9;
+}
+
+.cms-editor-active .cms-editor-link:hover .cms-editor-button {
+    pointer-events: all;
+}
+
+.cms-editor-active .cms-editor-link:hover .cms-editor-button::after {
+    opacity: 1;
+}
+
+.cms-editor-active .cms-editor-link .cms-editor-button {
+    position: absolute;
+    height: 100%;
+    pointer-events: none;
+}
+
+.cms-editor-active .cms-editor-link .cms-editor-button:after {
+    content: 'Edit Component';
+    display: block;
+    position: sticky;
+    z-index: 99;
+    top: 30px;
+    padding: 12px 20px;
+    width: auto;
+    border-radius: 4px;
+    box-shadow: 0px 0px 1px #5e5e5e;
+    border: 2px solid #cfcfcf;
+    background: #ffffff;
+    text-align: center;
+    font-family: 'TT Norms Pro', var(--font);
+    font-size: 16px;
+    color: #222222;
+    opacity: 0;
+    transition: opacity 0.15s ease-in;
+}
+
+.cms-editor-active .cms-editor-link .cms-editor-button:hover:after {
+    border: 2px solid #707070;
+}

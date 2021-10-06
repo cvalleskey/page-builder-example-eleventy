@@ -1,0 +1,17 @@
+{
+	"title": "",
+	"content_blocks": [],
+	"layout": "layouts/default.liquid",
+	"permalink": "/{{ page.fileSlug }}/",
+	"_options": {
+		"pagination": {
+			"hidden": true
+		},
+		"layout": {
+			"hidden": true
+		},
+		"permalink": {
+			"hidden": true
+		}
+	}
+}

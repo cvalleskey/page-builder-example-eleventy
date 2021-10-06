@@ -1,0 +1,22 @@
+{% if content_blocks.size > 0 %}
+    <div class="c-page theme-{{ page_theme | slugify | default: 'dark' }}">
+
+    {% for block in content_blocks %}
+        {% assign c = block._bookshop_name | prepend: 'c-' %}
+        <div class="{{c}}
+                    cms-editor-link 
+                    component-wrapper
+                    {% if block._alt %}
+                    component-wrapper--alt
+                    {% elsif block._branded %}
+                    component-wrapper--branded
+                    {% endif %}" 
+             data-cms-editor-link="cloudcannon:#content_blocks[{{ forloop.index0 }}]">
+             <span class="cms-editor-button"></span>
+            
+            {% bookshop {{block._bookshop_name}} bind: block %}
+        </div>
+    {% endfor %}
+
+    </div>
+{% endif %}
