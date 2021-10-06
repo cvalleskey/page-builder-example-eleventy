@@ -13,7 +13,7 @@
             # The `page` include loops through all content_blocks and renders them.
             # Using a bookshop tag here means that live previewing will catch new components.
         {% endcomment %}
-        {% bookshop_include page content_blocks: content_blocks page_theme: page_theme %}
+        {% bookshop_include "page" content_blocks: content_blocks page_theme: page_theme %}
 
         {{ content }}
         <a class="cms-editor-link
